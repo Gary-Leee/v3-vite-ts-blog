@@ -30,18 +30,29 @@ function handleRouter(event: MouseEvent): void {
     console.dir(target);
     router.push(target.pathname)
 }
-
+let html = document.getElementsByTagName('html')[0];
 function changeTheme() {
-    let html = document.getElementsByTagName('html')[0];
-    if (!html.className) html.className = 'dark';
-    else html.className = '';
-    console.dir(html);
+
+    if (html.className == 'dark') html.className = 'light';
+    else html.className = 'dark';
+    // // 定义一个函数来处理媒体查询的变化
+    // const handleDarkModeChange = (mq) => {
+    //     console.log(mq.matches);
+    //     if (mq.matches) {
+    //         html.className = 'dark'
+    //     } else {
+    //         html.className = 'light'
+    //     }
+    // };
+
+    // // 初始调用一次以设置初始状态
+    // handleDarkModeChange(darkModeMediaQuery);
 }
 </script>
 
 <style scoped lang="scss">
 header {
-    height: 5rem;
+    height: 6rem;
 
     .home {
         width: 4rem;

@@ -30,4 +30,13 @@ h1 {
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+p {
+  --c: opacity:0.5;
+  margin: 1.5rem 0;
+}
+
+p:first-child {
+  margin: 0 0 1.25rem 0;
+}
 </style>

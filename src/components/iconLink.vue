@@ -17,7 +17,7 @@ onMounted(() => {
     if (props.icon) {
         let dom = iconRef.value;
         dom.style.setProperty('--icon', `url('/src/assets/img/${props.icon}.svg')`);
-        console.dir(dom);
+        // console.dir(dom);
     }
 });
 

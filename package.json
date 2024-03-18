@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --open chrome.exe",
-    "start": "vite --open chrome.exe",
+    "dev": "vite --open --host",
+    "start": "vite --open --host",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },

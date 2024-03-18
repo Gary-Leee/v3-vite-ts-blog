@@ -4,14 +4,14 @@
         <nav class="nav">
             <div class="spacer"></div>
             <div class="right">
-                <a href="/blogs" @click="handleRouter" title="Blogs">
+                <a class="dark-hover" href="/blogs" @click="handleRouter" title="Blogs">
                     Blog
                 </a>
-                <a href="./" title="Project" @click="handleRouter">Project</a>
-                <a target="_blank" href="https://github.com/Gary-Leee" title="github">
+                <a class="dark-hover" href="./" title="Project" @click="handleRouter">Project</a>
+                <a class="dark-hover" target="_blank" href="https://github.com/Gary-Leee" title="github">
                     <div class="img-center github"></div>
                 </a>
-                <a title="Toggle Color Scheme" @click="changeTheme">
+                <a class="dark-hover" title="Toggle Color Scheme" @click="changeTheme">
                     <div class="img-center sun"></div>
                 </a>
             </div>
@@ -62,18 +62,8 @@ header {
         // background-color: var(--bg-c);
 
         a {
-            outline: none;
-            cursor: pointer;
             font-size: 1.2rem;
-            text-decoration: none;
-            color: inherit;
-            opacity: .6;
-            transition: opacity 0.3s;
             text-align: center;
-        }
-
-        a:hover {
-            opacity: 1;
         }
 
         .right {
@@ -81,18 +71,6 @@ header {
             grid-gap: 1.2rem;
             grid-auto-flow: column;
         }
-    }
-
-    .img-center {
-        --icon: url('');
-        mask: var(--icon) no-repeat;
-        mask-size: 100%;
-        color: inherit;
-        background-color: currentColor;
-        display: inline-block;
-        vertical-align: text-bottom;
-        width: auto;
-        height: auto;
     }
 
     .github {

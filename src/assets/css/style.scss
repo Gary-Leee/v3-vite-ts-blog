@@ -17,24 +17,34 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  // display: flex;
+  // place-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  width: 100vw;
-  text-align: center;
-}
-
+//子元素居中
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+//内容居中
+.content-center {
+  margin: auto;
+  width: 50%;
+}
+
+//遮罩居中
+.img-center {
+  --icon: url('');
+  mask: var(--icon) no-repeat;
+  mask-size: 100%;
+  color: inherit;
+  background-color: currentColor;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: auto;
+  height: auto;
 }
 
 // @media (prefers-color-scheme: light) {
@@ -51,9 +61,39 @@ h1 {
 //   }
 // }
 
+//hover变深样式
+.dark-hover {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+//下划线hover变深样式
+.dash-hover {
+  border-bottom: 2px solid;
+  transition: border-bottom-color 0.3s;
+  border-bottom-color: rgba(125, 125, 125, 0.3);
+
+  &:hover {
+    border-bottom-color: rgba(125, 125, 125, 1);
+  }
+}
+
+//主题切换
 .dark {
   &:root {
     --c: #ffffff;
     --bg-c: rgb(5, 5, 5);
   }
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
 }

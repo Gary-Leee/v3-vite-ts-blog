@@ -3,7 +3,12 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'main',
-        component: () => import('../pages/mainPage.vue')
+        component: () => import('../pages/mainPage-en.vue')
+    },
+    {
+        path: '/zh-cn',
+        name: 'main-cn',
+        component: () => import('../pages/mainPage-cn.vue')
     },
     {
         path: '/blogs',

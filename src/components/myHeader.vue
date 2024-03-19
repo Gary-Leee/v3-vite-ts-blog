@@ -11,6 +11,9 @@
                 <a class="dark-hover" target="_blank" href="https://github.com/Gary-Leee" title="github">
                     <div class="img-center github"></div>
                 </a>
+                <a class="dark-hover" target="_blank" title="changeLang" @click="changeLang">
+                    <div class="img-center changeLang"></div>
+                </a>
                 <a class="dark-hover" title="Toggle Color Scheme" @click="changeTheme">
                     <div class="img-center sun"></div>
                 </a>
@@ -31,22 +34,13 @@ function handleRouter(event: MouseEvent): void {
     router.push(target.pathname)
 }
 let html = document.getElementsByTagName('html')[0];
+function changeLang() {
+    router.currentRoute.value.fullPath == '/zh-cn' ? router.push('/') : router.push('/zh-cn');
+}
 function changeTheme() {
 
-    if (html.className == 'dark') html.className = 'light';
-    else html.className = 'dark';
-    // // 定义一个函数来处理媒体查询的变化
-    // const handleDarkModeChange = (mq) => {
-    //     console.log(mq.matches);
-    //     if (mq.matches) {
-    //         html.className = 'dark'
-    //     } else {
-    //         html.className = 'light'
-    //     }
-    // };
+    html.className == 'dark' ? html.className = 'light' : html.className = 'dark';
 
-    // // 初始调用一次以设置初始状态
-    // handleDarkModeChange(darkModeMediaQuery);
 }
 </script>
 
@@ -90,10 +84,17 @@ header {
         height: 1.2rem;
     }
 
+    .changeLang {
+        --icon: url('../assets/img/lang-change.svg');
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
     .sun {
         --icon: url('../assets/img/sun.svg');
         width: 1.5rem;
-        height: 1.5rem;
+        height: 1.4rem;
     }
+
 }
 </style>

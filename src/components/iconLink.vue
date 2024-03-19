@@ -1,6 +1,7 @@
 <template>
-    <a class="dash-hover" target="_blank" :href="props.src" title="github">
-        <span v-if="props.icon" ref="iconRef" class="img-center icon"></span> {{ props.inner }}
+    <a class="dash-hover" target="_blank" :href="props.src">
+        <span v-if="props.icon" ref="iconRef" class="img-center icon"></span>
+        <slot></slot>
     </a>
 </template>
 
@@ -9,7 +10,6 @@ import { defineProps, ref, onMounted } from 'vue';
 let props = defineProps({
     icon: String,
     src: String,
-    inner: String,
 });
 let iconRef = ref();
 // console.log(props);
@@ -26,8 +26,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.dash-hover {
+    --c: #3e3e3e;
+}
+
 .icon {
     --icon: url('');
+    margin-right: 0.1rem;
     width: 1.5rem;
     height: 1.5rem;
 }

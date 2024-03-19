@@ -40,16 +40,15 @@
     p {
       color: rgba($color: #3e3e3e, $alpha: 0.7);
     }
-
-    //选中的颜色aaa
-    ::selection {
-      background: #eaeaea;
-    }
   }
 }
 
 body {
   margin: 0;
+}
+//选中的颜色aaa
+::selection {
+  background: #eaeaea;
 }
 
 //子元素居中

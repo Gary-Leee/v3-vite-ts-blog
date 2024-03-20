@@ -1,6 +1,8 @@
 <template>
     <header>
-        <a class="home" href="/" @click="handleRouter"></a>
+        <a class="home" href="/" @click="gohome">
+            <logo></logo>
+        </a>
         <nav class="nav">
             <div class="spacer"></div>
             <div class="right">
@@ -38,6 +40,10 @@ function handleRouter(event: MouseEvent): void {
     console.dir(target);
     router.push(target.pathname)
 }
+function gohome(event: MouseEvent) {
+    event.preventDefault();
+    router.push('/')
+}
 let html = document.getElementsByTagName('html')[0];
 let ismain = ref(true);
 watch(() => router.currentRoute.value.fullPath, (newV, oldV) => {
@@ -68,8 +74,8 @@ header {
     .home {
         width: 4rem;
         height: 4rem;
-        margin: 0.5rem;
-        background-color: #524e4e;
+        margin: 1rem;
+        // background-color: #524e4e;
         position: fixed;
         left: 0;
     }
@@ -100,6 +106,7 @@ header {
         width: 1.2rem;
         height: 1.2rem;
     }
+
     .gitee {
         --icon: url('../assets/img/Gitee-icon.svg');
         width: 1.4rem;

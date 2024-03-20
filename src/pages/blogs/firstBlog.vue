@@ -1,9 +1,8 @@
 <template>
-    <div v-for="item in arr">{{ item }}</div>
+    helll
 </template>
 
 <script lang="ts" setup>
-const arr: object[] = [{ 'hello': 1 }];
 </script>
 
 <style scoped></style>

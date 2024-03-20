@@ -1,6 +1,6 @@
 :root {
   --bg-c: #ffffff;
-  --c: #3e3e3e;
+  --c: rgba(62, 62, 62, 0.6);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,35 +17,59 @@
 //主题切换
 .dark {
   &:root {
-    --c: #ffffff;
+    --c: rgba(256, 256, 256, 0.6);
     --bg-c: rgb(5, 5, 5);
     transition: background-color 0.5s;
+  }
 
-    p {
-      color: rgba($color: #ffffff, $alpha: 0.7);
-    }
+  h1 {
+    color: #fff;
+  }
 
-    ::selection {
-      background: #333131;
+  p {
+    color: rgba($color: #ffffff, $alpha: 0.7);
+  }
+
+  ::selection {
+    background: #333131;
+  }
+
+  .dash-hover {
+    color: #fff;
+  }
+
+  .dark-hover {
+    &:hover {
+      color: #fff;
     }
   }
 }
 
 .light {
   &:root {
-    --c: #3e3e3e;
+    --c: rgba(62, 62, 62, 0.6);
     --bg-c: #ffffff;
     transition: background-color 0.5s;
+  }
 
-    p {
-      color: rgba($color: #3e3e3e, $alpha: 0.7);
-    }
+  h1 {
+    color: #3e3e3e;
+  }
+
+  p {
+    color: rgba($color: #3e3e3e, $alpha: 0.7);
+  }
+
+  .dash-hover {
+    color: #3e3e3e;
+
   }
 }
 
 body {
   margin: 0;
 }
+
 //选中的颜色aaa
 ::selection {
   background: #eaeaea;
@@ -79,12 +103,12 @@ body {
 
 //hover变深样式
 .dark-hover {
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  color: inherit;
+  transition: color 0.3s;
   cursor: pointer;
 
   &:hover {
-    opacity: 1;
+    color: #3e3e3e;
   }
 }
 

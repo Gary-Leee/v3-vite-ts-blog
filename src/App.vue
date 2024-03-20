@@ -8,7 +8,11 @@
 <script setup lang="ts">
 let html = document.getElementsByTagName('html')[0];
 let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
+if (darkModeMediaQuery.matches) {
+  html.className = 'dark';
+} else {
+  html.className = 'light';
+}
 darkModeMediaQuery.addListener(e => {
   if (e.matches) {
     html.className = 'dark';

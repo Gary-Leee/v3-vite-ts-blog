@@ -14,7 +14,7 @@
       <icon-link icon="Emial-icon">邮箱</icon-link>
       <icon-link src="https://gitee.com/gary-leee" icon="Gitee-icon">码云</icon-link>
     </p>
-    <p style="opacity: 0.5;">2024-PRESENT @ Gary-Leee</p>
+    <p>2024-PRESENT @ Gary-Leee</p>
   </article>
 </template>
 

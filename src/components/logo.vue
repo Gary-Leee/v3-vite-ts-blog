@@ -1,46 +1,101 @@
 <template>
-    <svg width="80" height="80" viewBox="0 0 774 479" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M93.2065 3C18.0764 302.842 -11.7936 378 24.2065 421C60.2065 464 274.206 345 299.206 304C324.206 263 202.679 227.805 145.206 310C87.7339 392.195 244.206 447 299.206 443C354.206 439 465.206 358 498.206 316C531.206 274 422.206 216 369.206 316C316.206 416 457.206 458 519.206 443C581.206 428 667.206 366 698.207 325C729.207 284 596.212 243.269 573.207 325C551.631 484.581 620.207 487 688.207 449C756.207 411 764.207 356 764.207 356"
-            stroke="#3E3E3E" stroke-width="18" stroke-dasharray="" stroke-dashoffset="0.00" />
-    </svg>
+    <a class="home" title="@Gary-leee" href="/" @click="gohome">
+        <!-- <div class="logo"> -->
+        <svg class="logo" viewBox="0 0 847 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="logo"
+                d="M99.2065 3C24.0764 302.842 -12.5 400 23.5 443C59.5001 486 293.913 374.5 305.206 304C316.5 233.5 208.679 227.805 151.206 310C93.7339 392.195 226.706 470.5 315.5 449C404.294 427.5 497.706 361 514.5 316C531.294 271 428.206 216 375.206 316C322.206 416 487.5 458 549.5 443C611.5 428 705.5 366 728.5 316C751.5 266 611.187 228.945 588.181 310.676C555.5 449 702.5 468.109 770.5 430.109C838.5 392.109 837.526 342.432 837.526 342.432"
+                stroke="#3E3E3E" stroke-width="25" />
+        </svg>
+        <!-- </div> -->
+    </a>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-
-function animation() {
-    let path: SVGPathElement = document.querySelector('path') as SVGPathElement;
-    let length = path.getTotalLength();
-    path.style.transition = 'none';
-    // Set up the starting positions
-    path.style.strokeDasharray = length + ' ' + length;
-    // Clear any previous transition
-    path.style.strokeDashoffset = '' + length;
-    // Trigger a layout so styles are calculated & the browser
-    // picks up the starting position before animating
-    path.getBoundingClientRect();
-    // Define our transition
-    path.style.transition = 'stroke-dashoffset 2s ease-in-out';
-    // Go!
-    path.style.strokeDashoffset = '0';
-    setTimeout(() => {
-        path.style.strokeDashoffset = '0';
-        path.style.transition = 'stroke-dashoffset 2s ease-in-out';
-        // Go!
-        path.style.strokeDashoffset = '' + length;
-    }, 5000);
-
-    // await animation();
+import { useRouter } from 'vue-router';
+import { onMounted, onBeforeUnmount } from 'vue';
+const router = useRouter();
+function gohome(event: MouseEvent) {
+    event.preventDefault();
+    router.push('/')
 }
+function animation() {
+    let path = document.getElementById('logo') as unknown as SVGPathElement;
+    if (path) {
+        let length = path.getTotalLength();
+        path.style.transition = 'none';
+        path.style.strokeDasharray = length + ' ' + length;
+        path.style.strokeDashoffset = '' + length;
+        path.getBoundingClientRect();
+        path.style.transition = 'stroke-dashoffset 2s ease-in-out';
+        path.style.strokeDashoffset = '0';
+        setTimeout(() => {
+            path.style.strokeDashoffset = '0';
+            path.style.transition = 'stroke-dashoffset 2s ease-in-out';
+            path.style.strokeDashoffset = '' + length;
+        }, 5000);
+    }
+}
+let interval: number;
 onMounted(() => {
     // animation();
-    setInterval(() => {
-        animation();
-    }, 10000)
+    // interval = setInterval(() => {
+    //     animation();
+    // }, 10000)
+})
+
+onBeforeUnmount(() => {
+    clearInterval(interval);
 })
 
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.home {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+    position: fixed;
+    left: 0;
+}
+
+.logo {
+    width: inherit;
+    height: inherit;
+}
+
+@keyframes grow {
+    0% {
+        stroke-dashoffset: 1px;
+        stroke-dasharray: 0 3000px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    40% {
+        stroke-dasharray: 3000px 0;
+    }
+
+    /* Moving back */
+    85% {
+        stroke-dasharray: 3000px 0;
+    }
+
+    95%,
+    to {
+        stroke-dasharray: 0 3000px;
+    }
+}
+
+path {
+    stroke-dashoffset: 1px;
+    stroke-dasharray: 3000px 0;
+    animation: grow 8s ease forwards infinite;
+    transform-origin: center;
+    stroke: #303030;
+    animation-delay: 0s;
+}
+</style>

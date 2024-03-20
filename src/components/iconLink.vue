@@ -1,6 +1,7 @@
 <template>
-    <a class="dash-hover" target="_blank" :href="props.src">
-        <span v-if="props.icon" :style = "`--icon:url('/src/assets/img/${props.icon}.svg')`" ref="iconRef" class="img-center icon"></span>
+    <a class="dash-hover" target="_blank" :href="props.href">
+        <span v-if="props.icon" :style="`--icon:url('/src/assets/img/${props.icon}.svg')`" ref="iconRef"
+            class="img-center icon"></span>
         <slot></slot>
     </a>
 </template>
@@ -9,13 +10,14 @@
 import { defineProps } from 'vue';
 let props = defineProps({
     icon: String,
-    src: String,
+    href: String,
 });
 </script>
 
 <style scoped>
 .dash-hover {
     --c: #3e3e3e;
+    margin: 0 0.2rem;
 }
 
 .icon {

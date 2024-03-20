@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BlogBlock: typeof import('./src/components/blogs/blogBlock.vue')['default']
+    BlogContent: typeof import('./src/components/blogs/blogContent.vue')['default']
     BlogLink: typeof import('./src/components/blogs/blogLink.vue')['default']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElLink: typeof import('element-plus/es')['ElLink']

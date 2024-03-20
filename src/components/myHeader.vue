@@ -1,8 +1,6 @@
 <template>
     <header>
-        <a class="home" href="/" @click="gohome">
-            <logo></logo>
-        </a>
+        <logo></logo>
         <nav class="nav">
             <div class="spacer"></div>
             <div class="right">
@@ -17,7 +15,7 @@
                 <a v-if="ismain" class="dark-hover" title="changeLang" @click="changeLang">
                     <span class="img-center changeLang"></span>
                 </a>
-                <a v-else class="dark-hover" href="/" title="gohome" @click="router.push('/');">
+                <a v-else class="dark-hover" href="/" title="gohome" @click="gohome">
                     <span class="img-center gohome"></span>
                 </a>
                 <a class="dark-hover" title="Toggle Color Scheme" @click="changeTheme">
@@ -47,10 +45,10 @@ function gohome(event: MouseEvent) {
 let html = document.getElementsByTagName('html')[0];
 let ismain = ref(true);
 watch(() => router.currentRoute.value.fullPath, (newV, oldV) => {
-    console.log(newV);
     if (newV == '/' || newV == '/zh-cn') ismain.value = true;
     else ismain.value = false
 })
+//中英文切换和防抖
 function changeLanguage() {
     let timer: any;
     return () => {
@@ -62,6 +60,7 @@ function changeLanguage() {
     }
 }
 const changeLang = changeLanguage();
+//更换主题
 function changeTheme() {
     html.className == 'dark' ? html.className = 'light' : html.className = 'dark';
 }
@@ -70,15 +69,6 @@ function changeTheme() {
 <style scoped lang="scss">
 header {
     height: 6rem;
-
-    .home {
-        width: 4rem;
-        height: 4rem;
-        margin: 1rem;
-        // background-color: #524e4e;
-        position: fixed;
-        left: 0;
-    }
 
     .nav {
         font-size: 1rem;

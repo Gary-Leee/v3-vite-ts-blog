@@ -12,6 +12,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  code {
+    font-weight: 800;
+  }
+}
+
+pre {
+  background-color: var(--c);
+  color: var(--bg-c);
+  
+  code{
+
+  }
 }
 
 //主题切换
@@ -22,7 +35,12 @@
     transition: background-color 0.5s;
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #fff;
   }
 
@@ -52,12 +70,17 @@
     transition: background-color 0.5s;
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #3e3e3e;
   }
 
   p {
-    color: rgba($color: #3e3e3e, $alpha: 0.7);
+    color: rgba($color: #3e3e3e, $alpha: 0.8);
   }
 
   .dash-hover {
@@ -85,7 +108,8 @@ body {
 //内容居中
 .content-center {
   margin: auto;
-  width: 50%;
+  width: 50rem;
+  // width: 50%;
 }
 
 //遮罩居中

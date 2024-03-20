@@ -4,7 +4,7 @@
         <blog-block year="2024" :blogs="blogs2024"></blog-block>
         <blog-block year="2023" :blogs="blogs2023"></blog-block>
     </div>
-    <router-view></router-view>
+    <router-view v-else></router-view>
 </template>
 
 <script lang="ts" setup>
@@ -17,9 +17,7 @@ let blogs2024: blogInformation[] = [
     { title: '我的2024', link: '', time: 'Mar 18' },
 ];
 let blogs2023: blogInformation[] = [
-    { title: '这是我第一篇blog！', link: 'firstBlog', time: 'Mar 2' },
-    { title: '我的2024', link: '' },
-    { title: '我的2024', link: '', time: 'Mar 18' },
+    { title: '设计一个SVG动画的logo', link: 'svgLog', time: 'Nov 25' },
 ];
 const router = useRouter();
 let ismain = ref(true);

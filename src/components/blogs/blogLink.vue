@@ -1,5 +1,5 @@
 <template>
-    <div class="blogLink">
+    <div class="blogLink hover-to-enhance">
         <a @click="handleClick">
             <span class="title">{{ props.title }}</span>
             <span class="time">{{ props.time }}</span>

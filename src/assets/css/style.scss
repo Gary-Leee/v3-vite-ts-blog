@@ -1,6 +1,7 @@
 :root {
   --bg-c: #ffffff;
   --c: rgba(62, 62, 62, 0.6);
+  --c-title: rgba(62, 62, 62, 1);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,36 +13,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  code {
-    font-weight: 800;
-  }
 }
 
-pre {
-  background-color: var(--c);
-  color: var(--bg-c);
-  
-  code{
+code {
+  font-weight: 1000;
+  margin: 0 0.3rem;
+}
 
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--c-title);
 }
 
 //主题切换
 .dark {
   &:root {
     --c: rgba(256, 256, 256, 0.6);
+    --c-title: #fff;
     --bg-c: rgb(5, 5, 5);
     transition: background-color 0.5s;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #fff;
   }
 
   p {
@@ -61,22 +55,25 @@ pre {
       color: #fff;
     }
   }
+
+  .hover-to-enhance {
+    color: var(--c);
+    transition: color 0.5s;
+    --c: rgb(256, 256, 256, 0.6);
+
+    &:hover {
+      transition: color 0.3s;
+      --c: rgb(256, 256, 256)
+    }
+  }
 }
 
 .light {
   &:root {
     --c: rgba(62, 62, 62, 0.6);
+    --c-title: rgba(62, 62, 62);
     --bg-c: #ffffff;
     transition: background-color 0.5s;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #3e3e3e;
   }
 
   p {
@@ -85,7 +82,22 @@ pre {
 
   .dash-hover {
     color: #3e3e3e;
+  }
 
+  .hover-to-enhance {
+    color: var(--c);
+    transition: color 0.5s;
+    --c: rgb(62, 62, 62, 0.6);
+
+    &:hover {
+      transition: color 0.3s;
+      --c: rgb(62, 62, 62)
+    }
+  }
+
+  //选中的颜色aaa
+  ::selection {
+    background: #eaeaea;
   }
 }
 
@@ -93,10 +105,7 @@ body {
   margin: 0;
 }
 
-//选中的颜色aaa
-::selection {
-  background: #eaeaea;
-}
+
 
 //子元素居中
 .center {

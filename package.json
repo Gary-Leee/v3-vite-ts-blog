@@ -17,6 +17,7 @@
     "vue-router": "4.3.0"
   },
   "devDependencies": {
+    "@types/prismjs": "^1.26.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "node-sass": "^9.0.0",
     "sass": "^1.72.0",

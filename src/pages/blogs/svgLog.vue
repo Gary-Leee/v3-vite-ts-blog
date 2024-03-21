@@ -1,20 +1,13 @@
 <template>
-    <blog-content :title="title" :time="time" :year="year">
+    <div class="content-center">
+        <div class="blog-title">
+            <h1>设计一个SVG动画的logo</h1>
+            <p>Nov 25, 2023</p>
+        </div>
         <p>最近我把左上角的logo换成了动画的SVG：</p>
         <p class="center">
             <a class="home" title="@Gary-leee" href="/" @click="gohome">
-                <!-- <svg  class="logo"  viewBox="0 0 774 479" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path id="logo1"
-                        d="M93.2065 3C18.0764 302.842 -11.7936 378 24.2065 421C60.2065 464 274.206 345 299.206 304C324.206 263 202.679 227.805 145.206 310C87.7339 392.195 244.206 447 299.206 443C354.206 439 465.206 358 498.206 316C531.206 274 422.206 216 369.206 316C316.206 416 457.206 458 519.206 443C581.206 428 667.206 366 698.207 325C729.207 284 596.212 243.269 573.207 325C551.631 484.581 620.207 487 688.207 449C756.207 411 764.207 356 764.207 356"
-                        stroke="#3E3E3E" stroke-width="18" stroke-dasharray="" stroke-dashoffset="0.00" />
-                </svg> -->
-                <svg class="logo" viewBox="0 0 847 462" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path id="logo1"
-                        d="M99.2065 3C24.0764 302.842 -12.5 400 23.5 443C59.5001 486 293.913 374.5 305.206 304C316.5 233.5 208.679 227.805 151.206 310C93.7339 392.195 226.706 470.5 315.5 449C404.294 427.5 497.706 361 514.5 316C531.294 271 428.206 216 375.206 316C322.206 416 487.5 458 549.5 443C611.5 428 705.5 366 728.5 316C751.5 266 611.187 228.945 588.181 310.676C555.5 449 702.5 468.109 770.5 430.109C838.5 392.109 837.526 342.432 837.526 342.432"
-                        stroke="#3E3E3E" stroke-width="25" />
-                </svg>
-
-
+                <logo class="logo"></logo>
             </a>
         </p>
         <h2>灵感来源</h2>
@@ -42,52 +35,8 @@
         听着很美好，我们动手实现。
         </p>
         <h2>尝试实现</h2>
-        <p>废话少说，上代码</p>
-        <pre>
-            <code class="language-js">
-                function animation() {
-           let path = document.querySelector('path') as SVGPathElement;
-           if (path) {
-                   let length = path.getTotalLength();
-                   path.style.transition = 'none';
-                   path.style.strokeDasharray = length + ' ' + length;
-                   path.style.strokeDashoffset = '' + length;
-                   path.getBoundingClientRect();
-                   path.style.transition = 'stroke-dashoffset 2s ease-in-out';
-                   path.style.strokeDashoffset = '0';
-                   setTimeout(() => {
-                       path.style.strokeDashoffset = '0';
-                       path.style.transition = 'stroke-dashoffset 2s ease-in-out';
-                       path.style.strokeDashoffset = '' + length;
-                   }, 5000);
-               }
-           }
-           onMounted(() => {
-                 animation();
-                 setInterval(() => {
-                     animation();
-                }, 10000)
-            })
-            </code>
-            
-        </pre>
-        <p>使用js看似很好的实现了这个动画，but，当我们dev环境时，setInterval并不能完美的执行。
-            在组件中使用querySelector实现这个动画在这个blog就不能复用。看来我们只能把希望放在css上实现，把压力分给GPU，这样也能适当的减少CPU的压力
-        </p>
-    </blog-content>
-</template>
-
-<script lang="ts" setup>
-import { useRouter } from 'vue-router';
-import useBlogStore from '../../store/blog.ts'
-import { onMounted } from 'vue';
-import Prism from 'prismjs'
-function gohome(event: MouseEvent) {
-    event.preventDefault();
-    router.push('/')
-}
-function animation() {
-    // let path = document.getElementById('logo1') as unknown as SVGPathElement;
+        <p>刚开始想控制签名能展开和收缩，显得高级一点，就想用js实现这个动画。废话少说，上代码</p>
+        <pre><code class="language-js">function animation() {
     let path = document.querySelector('path') as SVGPathElement;
     if (path) {
         let length = path.getTotalLength();
@@ -97,20 +46,90 @@ function animation() {
         path.getBoundingClientRect();
         path.style.transition = 'stroke-dashoffset 2s ease-in-out';
         path.style.strokeDashoffset = '0';
+        setTimeout(() => {
+            path.style.strokeDashoffset = '0';
+            path.style.transition = 'stroke-dashoffset 2s ease-in-out';
+            path.style.strokeDashoffset = '' + length;
+        }, 5000);
     }
 }
-const router = useRouter();
-
-const blogStore = useBlogStore();
-const { title, time, year } = blogStore.blog;
-
 onMounted(() => {
     animation();
+    setInterval(() => {
+        animation();
+    }, 10000)
+})</code></pre>
+        <p>使用js看似很好的实现了这个动画，but，当我们dev环境时，setInterval并不能完美的执行。
+            在组件中使用<code>querySelector</code>实现这个动画在这个blog就不能复用。看来我们只能把希望放在css上实现，把压力分给GPU，这样也能适当的减少浏览器的eventLoop的压力
+        </p>
+        <h2>
+            完美的方法
+        </h2>
+        <p>使用<code>animation</code>和<code>keyframes</code>直接实现往复运动</p>
+        <pre><code class="language-css">@keyframes grow {
+    0% {
+        stroke-dashoffset: 1px;
+        stroke-dasharray: 0 3000px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    40% {
+        stroke-dasharray: 3000px 0;
+    }
+    /* go back */
+    75% {
+        stroke-dasharray: 3000px 0;
+    }
+    95%,
+    to {
+        stroke-dasharray: 0 3000px;
+    }
+}
+path {
+    stroke-dashoffset: 1px;
+    stroke-dasharray: 3000px 0;
+    animation: grow 9s ease forwards infinite;
+    transform-origin: center;
+    stroke: #3E3E3E;
+    animation-delay: 0s;
+}</code></pre>
+        <p>这样我们就实现了动画组件和她的复用:</p>
+        <p class="center">
+            <a class="home" title="@Gary-leee" href="/" @click="gohome">
+                <logo class="logo"></logo>
+            </a>
+        </p>
+        <p>尽管他看起来已经非常不错了，但是我仍然发现这个SVG不像是手写的，path像是突然开始又戛然而止，<code>`stroke-with`</code>的颗粒度又达不到手写的标准，用js控制那就更回到了原点。这个坑就先留着吧哈哈哈
+        </p>
+        <end link="blogs"></end>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+import { onMounted } from 'vue';
+import Prism from 'prismjs'
+function gohome(event: MouseEvent) {
+    event.preventDefault();
+    router.replace('/')
+}
+const router = useRouter();
+onMounted(() => {
     Prism.highlightAll();
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.blog-title {
+    margin-bottom: 2rem;
+
+    p {
+        opacity: 0.7;
+    }
+}
+
 .logo {
     width: 8rem;
     height: 8rem;

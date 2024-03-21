@@ -26,6 +26,7 @@ export const router = createRouter({
 
 // 设置路由守卫
 router.beforeEach((to, from, next) => {
+    // console.log(to.fullPath, from.path)
     if (to.fullPath == from.path && to.name != 'main') {
         return;
     } else {

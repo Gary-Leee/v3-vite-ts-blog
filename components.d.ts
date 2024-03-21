@@ -13,6 +13,7 @@ declare module 'vue' {
     ElCol: typeof import('element-plus/es')['ElCol']
     ElLink: typeof import('element-plus/es')['ElLink']
     ElRow: typeof import('element-plus/es')['ElRow']
+    End: typeof import('./src/components/end.vue')['default']
     IconLink: typeof import('./src/components/iconLink.vue')['default']
     Logo: typeof import('./src/components/logo.vue')['default']
     MainPage: typeof import('./src/components/mainPage.vue')['default']

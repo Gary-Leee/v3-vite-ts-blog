@@ -17,7 +17,7 @@ export default defineConfig({
     }),
     prismjsPlugin({
       languages: 'all', // 语言
-      plugins: ['line-numbers', 'copy-to-clipboard'], //官网有其他功能,这里开启行数和复制按钮功能
+      plugins: ['line-numbers', 'copy-to-clipboard', 'show-language'], //官网有其他功能,这里开启行数和复制按钮功能
       theme: 'okaidia', // 主题
       css: true,
     })

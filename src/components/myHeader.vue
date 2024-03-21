@@ -35,7 +35,7 @@ const router = useRouter();
 function handleRouter(event: MouseEvent): void {
     event.preventDefault();
     const target: any = event.target;
-    console.dir(target);
+    // console.dir(target);
     router.push(target.pathname)
 }
 function gohome(event: MouseEvent) {
@@ -44,7 +44,7 @@ function gohome(event: MouseEvent) {
 }
 let html = document.getElementsByTagName('html')[0];
 let ismain = ref(true);
-watch(() => router.currentRoute.value.fullPath, (newV, oldV) => {
+watch(() => router.currentRoute.value.fullPath, (newV) => {
     if (newV == '/' || newV == '/zh-cn') ismain.value = true;
     else ismain.value = false
 })

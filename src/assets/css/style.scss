@@ -1,0 +1,164 @@
+:root {
+  --bg-c: #ffffff;
+  --c: rgba(62, 62, 62, 0.6);
+  --c-title: rgba(62, 62, 62, 1);
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--c);
+  background-color: var(--bg-c);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-weight: 1000;
+  margin: 0 0.3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--c-title);
+}
+
+//主题切换
+.dark {
+  &:root {
+    --c: rgba(256, 256, 256, 0.6);
+    --c-title: #fff;
+    --bg-c: rgb(5, 5, 5);
+    transition: background-color 0.5s;
+  }
+
+  p {
+    color: rgba($color: #ffffff, $alpha: 0.7);
+  }
+
+  ::selection {
+    background: #333131;
+  }
+
+  .dash-hover {
+    color: #fff;
+  }
+
+  .dark-hover {
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .hover-to-enhance {
+    color: var(--c);
+    transition: color 0.5s;
+    --c: rgb(256, 256, 256, 0.6);
+
+    &:hover {
+      transition: color 0.3s;
+      --c: rgb(256, 256, 256)
+    }
+  }
+}
+
+.light {
+  &:root {
+    --c: rgba(62, 62, 62, 0.6);
+    --c-title: rgba(62, 62, 62);
+    --bg-c: #ffffff;
+    transition: background-color 0.5s;
+  }
+
+  p {
+    color: rgba($color: #3e3e3e, $alpha: 0.8);
+  }
+
+  .dash-hover {
+    color: #3e3e3e;
+  }
+
+  .hover-to-enhance {
+    color: var(--c);
+    transition: color 0.5s;
+    --c: rgb(62, 62, 62, 0.6);
+
+    &:hover {
+      transition: color 0.3s;
+      --c: rgb(62, 62, 62)
+    }
+  }
+
+  //选中的颜色aaa
+  ::selection {
+    background: #eaeaea;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+
+
+//子元素居中
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//内容居中
+.content-center {
+  margin: auto;
+  width: 50rem;
+  // width: 50%;
+}
+
+//遮罩居中
+.img-center {
+  --icon: url('');
+  mask: var(--icon) no-repeat;
+  mask-size: 100%;
+  color: inherit;
+  background-color: currentColor;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: auto;
+  height: auto;
+}
+
+//hover变深样式
+.dark-hover {
+  color: inherit;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: #3e3e3e;
+  }
+}
+
+//下划线hover变深样式
+.dash-hover {
+  border-bottom: 2px solid;
+  transition: border-bottom-color 0.3s;
+  border-bottom-color: rgba(125, 125, 125, 0.3);
+
+  &:hover {
+    border-bottom-color: rgba(125, 125, 125, 1);
+  }
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}

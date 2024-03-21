@@ -75,8 +75,6 @@ header {
         grid-template-columns: auto max-content;
         box-sizing: border-box;
         padding: 2rem;
-        // color: var(--c);
-        // background-color: var(--bg-c);
 
         a {
             font-size: 1.2rem;

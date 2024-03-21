@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
+import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from "vue-router"
 import blogsRoute from "./blogsRoute";
 const routes: RouteRecordRaw[] = [
     {
@@ -18,9 +18,16 @@ const routes: RouteRecordRaw[] = [
     },
     ...blogsRoute
 ];
-
+let history = null;
+if (process.env.NODE_ENV === 'production') {
+    // 生产环境
+    history = createWebHistory()
+} else {
+    // 开发环境
+    history = createWebHashHistory()
+}
 export const router = createRouter({
-    history: createWebHashHistory(),
+    history: history,
     routes
 })
 

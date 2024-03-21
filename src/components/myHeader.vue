@@ -22,6 +22,7 @@
                     <span class="img-center sun"></span>
                 </a>
             </div>
+
         </nav>
     </header>
 
@@ -34,7 +35,6 @@ const router = useRouter();
 function handleRouter(event: MouseEvent): void {
     event.preventDefault();
     const target: any = event.target;
-    // console.dir(target);
     router.push(target.pathname)
 }
 function gohome(event: MouseEvent) {

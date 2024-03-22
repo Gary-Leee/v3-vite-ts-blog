@@ -1,0 +1,71 @@
+//主题切换
+.dark {
+    &:root {
+        --c: rgba(256, 256, 256, 0.6);
+        --c-title: #fff;
+        --bg-c: rgb(5, 5, 5);
+        transition: background-color 0.5s;
+    }
+
+    p {
+        color: rgba($color: #ffffff, $alpha: 0.7);
+    }
+
+    ::selection {
+        background: #333131;
+    }
+
+    .dash-hover {
+        color: #fff;
+    }
+
+    .dark-hover {
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .hover-to-enhance {
+        color: var(--c);
+        transition: color 0.5s;
+        --c: rgb(256, 256, 256, 0.6);
+
+        &:hover {
+            transition: color 0.3s;
+            --c: rgb(256, 256, 256)
+        }
+    }
+}
+
+.light {
+    &:root {
+        --c: rgba(62, 62, 62, 0.6);
+        --c-title: rgba(62, 62, 62);
+        --bg-c: #ffffff;
+        transition: background-color 0.5s;
+    }
+
+    p {
+        color: rgba($color: #3e3e3e, $alpha: 0.8);
+    }
+
+    .dash-hover {
+        color: #3e3e3e;
+    }
+
+    .hover-to-enhance {
+        color: var(--c);
+        transition: color 0.5s;
+        --c: rgb(62, 62, 62, 0.6);
+
+        &:hover {
+            transition: color 0.3s;
+            --c: rgb(62, 62, 62)
+        }
+    }
+
+    //选中的颜色aaa
+    ::selection {
+        background: #eaeaea;
+    }
+}

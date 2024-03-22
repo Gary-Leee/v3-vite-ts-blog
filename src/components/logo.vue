@@ -1,5 +1,5 @@
 <template>
-    <a class="home" title="@Gary-leee" href="/" @click="gohome">
+    <a class="sign-logo" title="@Gary-leee" href="/" @click="gohome">
         <svg class="logo" viewBox="0 0 847 462" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="logo"
                 d="M99.2065 3C24.0764 302.842 -12.5 400 23.5 443C59.5001 486 293.913 374.5 305.206 304C316.5 233.5 208.679 227.805 151.206 310C93.7339 392.195 226.706 470.5 315.5 449C404.294 427.5 497.706 361 514.5 316C531.294 271 428.206 216 375.206 316C322.206 416 487.5 458 549.5 443C611.5 428 705.5 366 728.5 316C751.5 266 611.187 228.945 588.181 310.676C555.5 449 702.5 468.109 770.5 430.109C838.5 392.109 837.526 342.432 837.526 342.432"
@@ -17,19 +17,35 @@ function gohome(event: MouseEvent) {
 }
 </script>
 
-<style scoped>
-.home {
-    width: 4rem;
-    height: 4rem;
-    margin: 1rem;
+<style scoped lang="scss">
+.sign-logo {
+    height: var(--h-height);
+    width: var(--h-height);
+    margin: 1.5rem;
     position: fixed;
     left: 0;
+
+    .logo {
+        width: inherit;
+        height: inherit;
+    }
 }
 
-.logo {
-    width: inherit;
-    height: inherit;
+@media screen and (max-width: 50rem) {
+    .sign-logo {
+        width: 3rem;
+        height: 3rem;
+        margin: 5%;
+        position: absolute;
+    }
 }
+
+@media screen and (max-width: 60rem) {
+    .sign-logo {
+        position: absolute;
+    }
+}
+
 
 @keyframes grow {
     0% {

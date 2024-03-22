@@ -34,7 +34,4 @@ darkModeMediaQuery.addListener(e => {
   }
 }
 
-main {
-  padding: 2rem 0;
-}
 </style>./pages/mainPage.vue

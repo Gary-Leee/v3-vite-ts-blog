@@ -2,7 +2,7 @@
     <!-- <div class="content-center"> -->
     <div v-if="ismain" class="content-center">
         <h1>Blogs</h1>
-        <blog-block year="2024" :blogs="blogs2024"></blog-block>
+        <!-- <blog-block year="2024" :blogs="blogs2024"></blog-block> -->
         <blog-block year="2023" :blogs="blogs2023"></blog-block>
         <!-- <blog-link v-for="blog in blogs2024" :link="blog.link" :title="blog.title" :time="blog.time"></blog-link>
         <blog-link v-for="blog in blogs2023" :link="blog.link" :title="blog.title" :time="blog.time"></blog-link> -->

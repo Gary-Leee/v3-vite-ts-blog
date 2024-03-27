@@ -22,6 +22,30 @@ export default defineConfig({
       css: true,
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        // manualChunks: {
+        //   outOfProject: ['vue', 'prismjs']
+        // },
+        manualChunks(id) {
+          if (id.includes('node_modules')) return 'vendor';
+        },
+        entryFileNames: 'js/[name].[hash].js',
+        chunkFileNames: 'js/[name].[hash].js',
+        assetFileNames(assetInfo) {
+          if (assetInfo.name?.endsWith('css')) {
+            return 'css/[name]-[hash].css';
+          }
+          const imgExts = ['png', 'jpg', 'svg']
+          if (imgExts.some((ext) => assetInfo.name?.endsWith(ext))) {
+            return 'imgs/[name]-[hash].[ext]';
+          };
+          return 'assets/[name]-[hash].[ext]';
+        }
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')

@@ -30,10 +30,10 @@
   padding: 2rem 0;
 }
 
-h1 {
-  font-size: 2.25rem;
-  line-height: 1.1;
-}
+// h1 {
+//   font-size: 2.25rem;
+//   line-height: 1.1;
+// }
 
 .find-list {
   display: flex;

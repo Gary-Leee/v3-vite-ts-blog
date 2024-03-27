@@ -4,11 +4,11 @@
         <nav>
             <div class="spacer"></div>
             <div class="right">
-                <a class="dark-hover" href="/blogs" title="Blogs" @click.prevent="handleRouter('blogs')">
+                <a class="dark-hover" href="/blogs" title="Blogs" @click.prevent="handleRouter('/blogs')">
                     <span v-if="isWide">Blog</span>
                     <span v-else class="img-center blogs"></span>
                 </a>
-                <a class="dark-hover" href="/projects" title="Projects" @click.prevent="handleRouter('projects')">
+                <a class="dark-hover" href="/projects" title="Projects" @click.prevent="handleRouter('/projects')">
                     <span v-if="isWide">Projects</span>
                     <span v-else class="img-center projects"></span>
                 </a>
@@ -36,7 +36,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 import { ref, watchEffect } from 'vue';
-import { debounce } from '@/utils/index'
+import { debounce } from '@/utils/pubFunctions'
 const router = useRouter();
 function handleRouter(target: string): void {
     // event.preventDefault();
@@ -71,8 +71,9 @@ function resize() {
     let clientWidth = document.body.clientWidth;
     // let rem = document.body.fontSize;
     clientWidth <= 600 ? isWide.value = false : isWide.value = true
-    console.log(clientWidth);
+    // console.log(clientWidth);
 }
+resize();
 window.onresize = resize;
 </script>
 
@@ -83,6 +84,7 @@ header {
 
     @media screen and (max-width: 50rem) {
         --h-height: 2.5rem;
+
         nav {
             padding: 15% 0;
         }
@@ -151,4 +153,4 @@ header {
     }
 
 }
-</style>
+</style>@/utils/pubFunctions

@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from "vue-router"
 import blogsRoute from "./blogsRoute";
+import projectsRoute from "./projectsRoute";
 // const routes: RouteRecordRaw[] = [
 const routes = [
     {
@@ -12,12 +13,8 @@ const routes = [
         name: 'main-cn',
         component: () => import('../pages/mainPage-cn.vue')
     },
-    {
-        path: '/projects',
-        name: 'projects',
-        component: () => import('../pages/projects.vue')
-    },
-    ...blogsRoute
+    ...blogsRoute,
+    ...projectsRoute
 ];
 let history = null;
 if (process.env.NODE_ENV === 'production') {

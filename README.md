@@ -1,20 +1,29 @@
 # v3-vite-ts-blog
 vue3+vite+ts的blog
 
-## 2024.3.17
-实现header，左上角返回根节点，实现换肤
+## 安装依赖
+```javascript
+git clone https://github.com/Gary-Leee/v3-vite-ts-blog.git  
 
-## 2024.3.18
-实现header，链接封一个组件，动态导入svg，换肤
+npm i 或者 pnpm i（推荐）
 
-## 2024.3.19
-实现部分路由，增加中英文首页
+npm start
+```
 
-## 2024.3.20
-二级路由，博客架构完成
+## 项目介绍
 
-## 2024.3.21
-添加第一篇博客
+因为是纯前端项目，所以安装完依赖后可以直接部署在云服务器上当personal profile
 
-## 2024.3.21
-移动端适配
+在线体验网址：[传送地址](http://garyleee.cool/ "Gary leee")
+
+
+
+## 功能
+
+* [x] 系统级换肤
+* [x] 手动换肤
+* [x] 左上角logo动画
+* [x] 移动端适配
+* [ ] 骨架屏
+* [ ] 淡入动画
+

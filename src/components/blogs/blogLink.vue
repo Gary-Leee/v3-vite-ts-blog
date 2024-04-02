@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue';
 import { useRouter } from 'vue-router';
 import useBlogStore from '../../store/blog.ts'
 const router = useRouter();

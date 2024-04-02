@@ -1,8 +1,6 @@
 <template>
     <div class="year"><span>{{ props.year }}</span></div>
-    <blog-link v-for="blog in props.blogs" :link="blog.link" :title="blog.title" :time="blog.time">
-
-    </blog-link>
+    <blog-link v-for="blog in props.blogs" :link="blog.link" :title="blog.title" :time="blog.time"></blog-link>
 </template>
 
 <script lang="ts" setup>
@@ -36,7 +34,7 @@ blogStore.$patch({
         font-size: 8rem;
         font-weight: 800;
         color: transparent;
-        -webkit-text-stroke: rgb(170 170 170 / 0.1);
+        -webkit-text-stroke: rgb(170 170 170 / 0.15);
         -webkit-text-stroke-width: 2px;
     }
 }

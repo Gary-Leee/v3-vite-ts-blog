@@ -14,6 +14,7 @@ const pinia = createPinia();
 
 app.use(router);
 app.use(pinia);
+// app.use(ElementPlus);
 // app.component(ElRow.name, ElRow);
 // app.component(ElCol.name, ElCol);
 

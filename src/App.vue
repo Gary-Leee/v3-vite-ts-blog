@@ -1,7 +1,7 @@
 <template>
   <my-header></my-header>
   <main>
-    <router-view></router-view>
+    <router-view class="slide-enter"></router-view>
   </main>
 </template>
 
@@ -33,5 +33,4 @@ darkModeMediaQuery.addListener(e => {
     filter: drop-shadow(0 0 2em #42b883aa);
   }
 }
-
 </style>./pages/mainPage.vue

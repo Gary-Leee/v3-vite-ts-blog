@@ -2,7 +2,7 @@
   <div class="content-center">
     <h1>Gary-Leee</h1>
   </div>
-  <article class="content-center nav-content">
+  <article class="content-center nav-content slide-enter">
     <p>Hey, I am Gary-Leee, a Front-end development engineer.</p>
     <p>This personal homepage is built by <icon-link href="https://cn.vuejs.org/">Vue3</icon-link> and
       <icon-link href="https://cn.vitejs.dev/">Vite</icon-link>,

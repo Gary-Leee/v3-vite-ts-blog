@@ -16,4 +16,4 @@ let blogs2023: blogInformation[] = [
 ];
 </script>
 
-<style scoped></style>@/interface
+<style scoped></style>

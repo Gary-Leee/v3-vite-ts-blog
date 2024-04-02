@@ -50,3 +50,19 @@
     border-bottom-color: rgba(125, 125, 125, 1);
   }
 }
+
+.slide-enter {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -2,7 +2,7 @@
   <div class="content-center" :onmouseenter="onmouseEnter">
     <h1>{{ myName }}</h1>
   </div>
-  <article class="content-center nav-content ">
+  <article class="content-center nav-content slide-enter">
     <p>嗨, 我是 Gary-Leee, 一个前端开发工程师</p>
     <p>我的个人主页是使用 <icon-link href="https://cn.vuejs.org/">Vue3</icon-link> +
       <icon-link href="https://cn.vitejs.dev/">Vite</icon-link> 实现的,

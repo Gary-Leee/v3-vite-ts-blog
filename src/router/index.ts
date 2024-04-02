@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from "vue-router"
 import blogsRoute from "./blogsRoute";
-const routes: RouteRecordRaw[] = [
+// const routes: RouteRecordRaw[] = [
+const routes = [
     {
         path: '/',
         name: 'main',

@@ -19,7 +19,7 @@
         <p>首先我们先要获取一个SVG的签名，博主使用的是<icon-link href="https://www.adobe.com/cn/lead/creativecloud/business.html">Adobe
                 illustrator</icon-link>，还要下载！对于一个懒人来说，这很不友好。我就选择了web版本的<icon-link
                 href="https://www.figma.com/">Figma</icon-link>去绘制自己的logo</p>
-        <p class="center"><img v-lazy :src="''" data-src="src/assets/img/blogImg/protoSign.png" alt="报错了，那别看了哈哈哈"></p>
+        <p class="center"><img v-lazy src="" data-src="@/assets/img/blogImg/protoSign.png" alt="报错了，那别看了哈哈哈"></p>
         <h2>根据笔触绘画</h2>
         <p>根据博主的介绍，用<code>`stroke-dasharray`</code>属性实现。查阅<icon-link
                 href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray">MDN</icon-link>发现像是个无聊的属性。去搜了一下发现了几篇有趣的文章。

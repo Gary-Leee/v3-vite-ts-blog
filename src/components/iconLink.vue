@@ -17,6 +17,7 @@ let props = defineProps({
 .dash-hover {
     --c: #3e3e3e;
     margin: 0 0.2rem;
+    user-select: none;
 }
 
 .icon {

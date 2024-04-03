@@ -20,7 +20,7 @@ let props = defineProps({
 <style scoped lang="scss">
 #projectBlock {
     .classification {
-        height: 2rem;
+        height: 3rem;
         position: relative;
         user-select: none;
         z-index: -1;
@@ -41,7 +41,7 @@ let props = defineProps({
 
     .project-grid {
         display: grid;
-        padding: 1.5rem;
+        padding: 2rem;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 1rem;
 

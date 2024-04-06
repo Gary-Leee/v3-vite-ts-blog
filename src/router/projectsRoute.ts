@@ -9,5 +9,10 @@ const projectsRoute = [
         name: 'myLogo',
         component: () => import('../pages/projects/myLogo.vue'),
     },
+    {
+        path: '/projects/moveBall',
+        name: 'moveBall',
+        component: () => import('../pages/projects/moveBall.vue'),
+    },
 ];
 export default projectsRoute;

@@ -13,10 +13,11 @@ export default defineConfig({
         // manualChunks(id, { getModuleInfo, getModuleIds }) {
         //   // if (id.includes('node_modules')) return 'vendor';
         //   if (id.includes('node_modules')) {
-        //     let a = id.toString().split('.pnpm/');
-        //     console.log(a[1]);
+        //     let a = id.toString().split('node_modules/')[2].split('/')[0];
+        //     // console.log(a);
+        //     return a;
         //   };
-        //   return 'vendor';
+        //   return 'js/[name].[hash].js';
         // },
         // manualChunks: {
         //   outOfProject: ['vue', 'vue-router', 'pinia', 'prismjs']

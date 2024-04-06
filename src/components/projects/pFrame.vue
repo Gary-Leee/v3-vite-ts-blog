@@ -13,9 +13,13 @@
 //     cb: Function
 // })
 // props.cb();
-</script>
+</script>   
 
 <style scoped lang="scss">
+* {
+    user-select: none;
+}
+
 .showZone {
     color: var(--c);
     margin: auto;

@@ -66,3 +66,25 @@
     opacity: 1;
   }
 }
+
+.pointer {
+  position: absolute;
+  user-select: none;
+  border-radius: 50%;
+  border: 1px solid var(--c);
+  animation: wave 0.3s forwards;
+  transform: translate(-50%, -50%);
+
+  @keyframes wave {
+    0% {
+      width: 0;
+      height: 0;
+    }
+
+    100% {
+      // transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

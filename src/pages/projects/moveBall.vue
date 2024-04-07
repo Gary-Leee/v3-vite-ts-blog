@@ -36,23 +36,22 @@ function ballMove(x: string, y: string) {
         const ballX = rectBall.left - rectBlock.left;
         // const ballX = rectBall.left;
         const ballY = rectBall.top - rectBlock.top;
-        console.dir(`球当前x:${ballX} 球当前y:${ballY}`);
+        // console.dir(`球当前x:${ballX} 球当前y:${ballY}`);
         ball.value.getAnimations().forEach((animation) => {
             animation.cancel()
         });
         //元素左上角点的定位 鼠标点-元素宽高 中心定位鼠标点
-        console.log(`球目标x:${x},球目标Y:${y}`);
+        // console.log(`球目标x:${x},球目标Y:${y}`);
         const rad = Math.atan2(Number(y) - Number(ballY), Number(x) - Number(ballX));
 
 
         const deg = (rad * 180) / Math.PI;
-
+        console.log(deg)
         ball.value.animate(
             [
                 { transform: `translate(${ballX}px , ${ballY}px)` },
-                // { transform: `translate(0px , 0px)` },
-                // { transform: `translate(${x}px , ${y}px) scaleX(1.5)`, offset: 0.8 },
-                // { transform: `translate(${x}px , ${y}px)  rotate(${deg}deg)` }
+                { transform: `translate(${ballX}px , ${ballY}px) rotate(${deg}deg) scaleX(1.5)`, offset: 0.4 },
+                { transform: `translate(${x}px , ${y}px)  rotate(${deg}deg) scaleX(1.5)`, offset: 0.8 },
                 { transform: `translate(${x}px , ${y}px)` }
             ],
             {
@@ -65,6 +64,7 @@ function ballMove(x: string, y: string) {
 }
 
 function move(e: MouseEvent) {
+    if (e.target != bgblock.value) return;
     const pointer: HTMLElement = document.createElement('div');
     pointer.classList.add('pointer');
     //鼠标点击的位置（相对于window）    
@@ -77,8 +77,8 @@ function move(e: MouseEvent) {
     pointer.addEventListener('animationend', () => {
         pointer.remove();
     })
-    // ballMove(`${x - (ballW / 2)}`, `${y - (ballH / 2)}`);
-    ballMove(`${x}`, `${y}`);
+    ballMove(`${x - (ballW / 2)}`, `${y - (ballH / 2)}`);
+    // ballMove(`${x}`, `${y}`);
 
 }
 </script>

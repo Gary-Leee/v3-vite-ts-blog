@@ -16,7 +16,7 @@ let CanvasProjects: projectInformation[] = [
     { classification: 'Canvas', link: 'viteBuild', desc: 'Mar 20' },
 ];
 let OptimizationProjects: projectInformation[] = [
-    { classification: 'OptimizationProjects', link: 'moveBall', desc: '新的web animation api实现小球的动画' },
+    { classification: 'OptimizationProjects', link: 'moveBall', desc: '新的web animation api实现小球移动的动画' },
 ];
 </script>
 

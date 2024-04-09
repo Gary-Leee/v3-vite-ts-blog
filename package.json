@@ -13,15 +13,19 @@
   "dependencies": {
     "element-plus": "^2.6.1",
     "pinia": "^2.1.7",
+    "three": "^0.163.0",
     "vue": "^3.4.21",
     "vue-router": "4.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/prismjs": "^1.26.3",
+    "@types/three": "^0.163.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.24.1",
     "node-sass": "^9.0.0",
+    "prettier": "^3.2.5",
     "prismjs": "1.29.0",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",

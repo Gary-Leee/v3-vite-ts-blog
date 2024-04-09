@@ -1,36 +1,39 @@
 :root {
-    --bg-c: #ffffff;
-    --c: rgba(62, 62, 62, 0.6);
-    --c-title: rgba(62, 62, 62, 1);
+  --bg-c: #ffffff;
+  --c: rgba(62, 62, 62, 0.6);
+  --c-title: rgba(62, 62, 62, 1);
 
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    color-scheme: light dark;
-    color: var(--c);
-    background-color: var(--bg-c);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--c);
+  background-color: var(--bg-c);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  user-select: text;
 }
 
 #app,
 html,
 body {
-    width: 100%;
-    height: 100%;
-
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    overflow-x: hidden;
-    overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 code {
-    font-weight: 1000;
-    margin: 0 0.3rem;
+  font-weight: 1000;
+  margin: 0 0.3rem;
 }
 
 h1,
@@ -39,44 +42,47 @@ h3,
 h4,
 h5,
 h6 {
-    margin-block: 0;
-    width: fit-content;
-    color: var(--c-title);
+  margin-block: 0;
+  width: fit-content;
+  color: var(--c-title);
 }
 
 h1 {
-    font-size: 2.25rem;
-    line-height: 1.1;
+  font-size: 2.25rem;
+  line-height: 1.1;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    cursor: pointer;
-    color: inherit;
-    outline: none;
-    user-select: auto;
-    text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  user-select: auto;
+  text-decoration: none;
 }
 
 pre {
-    code {
-        font-size: 0.8rem !important;
-    }
+  code {
+    font-size: 0.8rem !important;
+  }
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 main {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 2% 5%;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2% 5%;
+  > * {
+    @extend .slide-enter;
+  }
 
-    p {
-        width: 100%;
-    }
+  p {
+    width: 100%;
+  }
 }

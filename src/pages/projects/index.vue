@@ -13,10 +13,11 @@ let SvgProjects: projectInformation[] = [
     { classification: 'Svg', link: 'myLogo', desc: '通过svg实现循环的logo' },
 ];
 let CanvasProjects: projectInformation[] = [
-    { classification: 'Canvas', link: 'viteBuild', desc: 'Mar 20' },
+    { classification: 'Canvas', link: 'learnThree', desc: 'learn how to use threejs' },
 ];
 let OptimizationProjects: projectInformation[] = [
-    { classification: 'OptimizationProjects', link: 'moveBall', desc: '新的web animation api实现小球移动的动画' },
+    { classification: 'Optimization', link: 'moveBall', desc: '新的web animation api实现小球移动的动画' },
+    { classification: 'Optimization', link: 'crossWindow', desc: '跨窗口通信' },
 ];
 </script>
 

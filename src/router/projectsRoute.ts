@@ -14,5 +14,15 @@ const projectsRoute = [
         name: 'moveBall',
         component: () => import('../pages/projects/moveBall.vue'),
     },
+    {
+        path: '/projects/learnThree',
+        name: 'learnThree',
+        component: () => import('../pages/projects/learnThree.vue'),
+    },
+    {
+        path: '/projects/crossWindow',
+        name: 'crossWindow',
+        component: () => import('../pages/projects/crossWindow.vue'),
+    },
 ];
 export default projectsRoute;

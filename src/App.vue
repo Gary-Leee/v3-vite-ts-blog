@@ -1,7 +1,7 @@
 <template>
   <my-header></my-header>
-  <main>
-    <router-view class="slide-enter"></router-view>
+  <main class="slide-enter">
+    <router-view></router-view>
   </main>
 </template>
 

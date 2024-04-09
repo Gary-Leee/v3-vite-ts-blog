@@ -13,7 +13,6 @@ import { onMounted, ref } from 'vue';
 
 const threeScreen = ref();
 onMounted(() => {
-    console.log();
     const scene = new THREE.Scene();
     //透视摄像机
     const camera = new THREE.PerspectiveCamera(50, threeScreen.value.clientWidth / threeScreen.value.clientHeight, 0.1, 1000);

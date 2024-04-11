@@ -6,7 +6,7 @@
     <p>嗨, 我是 Gary-Leee, 一个前端开发工程师</p>
     <p>我的个人主页是使用 <icon-link href="https://cn.vuejs.org/">Vue3</icon-link> +
       <icon-link href="https://cn.vitejs.dev/">Vite</icon-link> 实现的,
-      如果你想看React版本（开发中）, 点击 <icon-link icon="react">这里</icon-link>,
+      如果你想看React版本（开发中）, 点击 <icon-link  href="http://garyleee.cool/react" icon="react">这里</icon-link>,
       如果你想看源码点击<icon-link icon="Github-icon" href="https://github.com/Gary-Leee/v3-vite-ts-blog"></icon-link> 或者
       <icon-link icon="Gitee-icon" href="https://gitee.com/gary-leee/v3-blog"></icon-link>
     </p>

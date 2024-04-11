@@ -9,6 +9,7 @@ import { prismjsPlugin } from 'vite-plugin-prismjs';
 import { removeConsole } from './vitePlugins/removeConsole';
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/vue',
   build: {
     rollupOptions: {
       output: {

@@ -6,7 +6,7 @@
     <p>Hey, I am Gary-Leee, a Front-end development engineer.</p>
     <p>This personal homepage is built by <icon-link href="https://cn.vuejs.org/">Vue3</icon-link> and
       <icon-link href="https://cn.vitejs.dev/">Vite</icon-link>,
-      if you want to see the React version(Developing...), click <icon-link icon="react">here</icon-link>,
+      if you want to see the React version(Developing...), click <icon-link href="http://garyleee.cool/react" icon="react">here</icon-link>,
       if you want to see the code click <icon-link icon="Github-icon"
         href="https://github.com/Gary-Leee/v3-vite-ts-blog"></icon-link> or <icon-link icon="Gitee-icon"
         href="https://gitee.com/gary-leee/v3-blog"></icon-link>

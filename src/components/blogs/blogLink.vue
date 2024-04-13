@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
-import useBlogStore from '../../store/blog.ts'
+import useBlogStore from '../../store/useBlog.ts'
 const router = useRouter();
 const props = defineProps({
     link: String,
@@ -50,4 +50,4 @@ function handleClick() {
         opacity: 0.6;
     }
 }
-</style>
+</style>../../store/useBlog.ts

@@ -1,21 +1,24 @@
+.sign-logo {
+  display: inline-block;
+  --h-height: 3rem;
+  height: var(--h-height);
+  width: var(--h-height);
+  margin: 1.5rem;
+  position: fixed;
+  left: 0;
+}
+
 @media screen and (max-width: 50rem) {
+  .sign-logo {
+    width: 3rem;
+    height: 3rem;
+    margin: 5%;
+    position: absolute;
+  }
+}
 
-    /* CSS 规则 */
-    .content-center {
-        // margin: auto;
-        // width: 90%;
-        // width: 50%;
-    }
-
-    // header {
-    // .sign-logo {
-    //     width: 1rem !important;
-    //     height: 1rem !important;
-    //     margin: 1rem !important;
-
-    // }
-
-    // }
-
-
+@media screen and (max-width: 60rem) {
+  .sign-logo {
+    position: absolute;
+  }
 }

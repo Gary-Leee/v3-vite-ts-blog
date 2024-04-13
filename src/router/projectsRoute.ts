@@ -24,5 +24,10 @@ const projectsRoute = [
         name: 'crossWindow',
         component: () => import('../pages/projects/crossWindow.vue'),
     },
+    {
+        path: '/projects/scanQRCode',
+        name: 'scanQRCode',
+        component: () => import('../pages/projects/scanQRCode.vue'),
+    },
 ];
 export default projectsRoute;

@@ -5,7 +5,7 @@
 
 <script lang="ts" setup>
 import { blogInformation } from '@/types/index'
-import useBlogStore from '../../store/blog.ts'
+import useBlogStore from '../../store/useBlog.ts'
 const blogStore = useBlogStore();
 
 let props = defineProps({
@@ -38,4 +38,4 @@ blogStore.$patch({
         -webkit-text-stroke-width: 2px;
     }
 }
-</style>
+</style>../../store/useBlog.ts

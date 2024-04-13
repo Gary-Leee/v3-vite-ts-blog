@@ -18,6 +18,7 @@ let CanvasProjects: projectInformation[] = [
 let OptimizationProjects: projectInformation[] = [
     { classification: 'Optimization', link: 'moveBall', desc: '新的web animation api实现小球移动的动画' },
     { classification: 'Optimization', link: 'crossWindow', desc: '跨窗口通信' },
+    { classification: 'Optimization', link: 'scanQRCode', desc: '使用websocket实现扫码登录' },
 ];
 </script>
 

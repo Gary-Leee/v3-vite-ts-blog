@@ -13,6 +13,7 @@ declare module 'vue' {
     IconLink: typeof import('./src/components/iconLink.vue')['default']
     Logo: typeof import('./src/components/logo.vue')['default']
     MyHeader: typeof import('./src/components/myHeader.vue')['default']
+    PageLoading: typeof import('./src/components/pageLoading.vue')['default']
     PFrame: typeof import('./src/components/projects/pFrame.vue')['default']
     ProjectBlock: typeof import('./src/components/projects/projectBlock.vue')['default']
     ProjectIntro: typeof import('./src/components/projects/project-intro.vue')['default']
